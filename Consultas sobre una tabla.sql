@@ -47,25 +47,24 @@ from pedido;
 aquellos códigos de cliente que aparezcan repetidos. */
 --Resuelva la consulta:
  --Utilizando la función YEAR de MySQL.
-	select distinct codigo_cliente
-    from pago
-    where year(fecha_pago)='2008';
-	--Utilizando la función DATE_FORMAT de MySQL.
-	select distinct codigo_cliente
-	from pago
-	where format(fecha_pago,'yyyy')='2008';
-	--Sin utilizar ninguna de las funciones anteriores.*/
-
-	select distinct codigo_cliente
-    from pago
-    where fecha_pago >='2008-01-01' and fecha_pago<= '2008-12-31';
-	--where fecha_pago between '2008-01-01' and '2008-12-31';
-    --Obtener la fecha actual del sistema
-	select getdate();
-	--Utilizando between
-	select distinct codigo_cliente
-	from pago 
-	where fecha_pago between '2008-01-01' and '2008-12-31';
+select distinct codigo_cliente
+from pago
+where year(fecha_pago)='2008';
+--Utilizando la función DATE_FORMAT de MySQL.
+select distinct codigo_cliente
+from pago
+where format(fecha_pago,'yyyy')='2008';
+--Sin utilizar ninguna de las funciones anteriores.*/
+select distinct codigo_cliente
+from pago
+where fecha_pago >='2008-01-01' and fecha_pago<= '2008-12-31';
+--where fecha_pago between '2008-01-01' and '2008-12-31';
+--Obtener la fecha actual del sistema
+select getdate();
+--Utilizando between
+select distinct codigo_cliente
+from pago 
+where fecha_pago between '2008-01-01' and '2008-12-31';
 /*Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de 
 entrega de los pedidos que no han sido entregados a tiempo.*/
 select codigo_pedido,codigo_cliente,fecha_esperada,fecha_entrega
